@@ -1,0 +1,26 @@
+snap-content {
+    padding:5px !important;
+}
+body {
+    color: #ffffff;
+}
+tr {
+    color: #ffffff !important;
+}
+tr:hover{
+    background-color: #3399cc !important;
+}
+.btn-default{
+    color:#ffffff !important;
+    background-color:#3399cc !important;
+}
+h2 small{
+    color: #ffffff !important;
+}
+bootbox-body{
+    color: #000000 !important;
+}
+input[type="checkbox"]{
+    width: 30px; /*Desired width*/
+    height: 30px; /*Desired height*/
+}

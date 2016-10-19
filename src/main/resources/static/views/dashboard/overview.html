@@ -1,0 +1,58 @@
+<div>
+    <div ng-include="'views/menu.html'"></div>
+
+    <snap-dragger></snap-dragger>
+    <snap-content snap-opt-tap-to-close=false>
+
+        <a snap-toggle=left ng-click="menuOpen = !menuOpen"> <span
+                class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" style="font-size: 50px;padding:5px;"> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i> <i ng-show=menuOpen
+                                                                                                                                                                         class="fa fa-times fa-2x"></i> </span>
+        </a>
+
+        <div class="container">
+
+
+
+        <div class=fr>
+            <h2 >Audio Dateien
+                <small>Verwalten der Playlist</small>
+            </h2>
+
+        </div>
+        <br/>
+
+        <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Aktiv</th>
+                <th>Abspielen</th>
+                <th>Titel</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="audio in audioList">
+                <td class="col-md-1">
+                    <input type="checkbox" name="my-checkbox" checked ng-click="toggle(audio.id, audio.active)" ng-model="audio.active">
+                </td>
+                <td class="col-md-2">
+                    <button type="button" class="btn btn-default btn-lg" ng-click="play(audio.id)">
+                        <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg" ng-click="delete(audio.id)">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+
+                </td>
+                <td class="col-md-9">{{audio.name}}</td>
+            </tr>
+            </tbody>
+        </table>
+            <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="gotoUpload()"> Hinzuf&uuml;gen</span>
+            </button>
+            </div>
+
+        </div>
+    </snap-content>
+</div>
